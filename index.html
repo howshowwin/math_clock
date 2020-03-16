@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="clock.css">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="clock">
+        <div class="outer-clock-face">
+            <div class="marking marking-one"></div>
+            <div class="marking marking-two"></div>
+            <div class="marking marking-three"></div>
+            <div class="marking marking-four"></div>
+            <div class="inner-clock-face">
+                <canvas id="cvs" class="display_none" width="400" height="400"></canvas>
+                <canvas id="cvs_2" class="display_none" width="400" height="400"></canvas>
+                <canvas id="cvs_3" class="display_none" width="400" height="400"></canvas>
+
+                <div class="hand hour-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="eleClock display_none">
+
+
+        <div class="h shake shake-slow"></div>
+        <div class="m shake shake-slow"></div>
+        <div class="s shake shake-slow"></div>
+        <div class="top_area">
+
+            <div class="change_time_button hour_ten_add">+</div>
+            <div class="change_time_button hour_add">+</div>
+            <div class="change_time_button min_ten_add">+</div>
+            <div class="change_time_button min_add">+</div>
+            <div class="change_time_button second_ten_add">+</div>
+            <div class="change_time_button second_add">+</div>
+
+
+        </div>
+
+        <div class="down_area">
+            <div class="change_time_button hour_ten_cut">-</div>
+            <div class="change_time_button hour_cut">-</div>
+            <div class="change_time_button min_ten_cut">-</div>
+            <div class="change_time_button min_cut">-</div>
+            <div class="change_time_button second_ten_cut">-</div>
+            <div class="change_time_button second_cut">-</div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <button class="btn hour_close">關閉時針</button>
+
+    <button class="btn mins_close">關閉分針</button>
+    <button class="btn second_close">關閉秒針</button>
+    <button class="btn eleClock_close">開啟電子時鐘</button>
+
+    <button class="btn track_close">開啟軌跡</button>
+    <button class="btn reset">RESET</button>
+
+
+    <script type="text/javascript" src="clock.js"></script>
+    
+</body>
+
+</html>
