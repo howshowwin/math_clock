@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="37.006px" height="408.873px" viewBox="0 0 37.006 408.873" enable-background="new 0 0 37.006 408.873"
+	 xml:space="preserve">
+<g id="圖層_1_1_">
+</g>
+<g id="按鍵">
+</g>
+<g id="電子鐘">
+</g>
+<g id="軌跡">
+</g>
+<g id="軌跡_時" display="none">
+</g>
+<g id="軌跡_分" display="none">
+</g>
+<g id="軌跡_秒" display="none">
+</g>
+<g id="秒針">
+	<g>
+		
+			<image overflow="visible" opacity="0.25" enable-background="new    " width="21" height="417" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAGhCAYAAACOO/9BAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
+GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAxBJREFUeNrs3dtu00AUheGZZBpE
+D1C4AARXiPd/JpCQUDmUqKe0JHHMnnYN7E6dxK5oxcVvacmpJ/68PbYrxRrZITzAFLcsjxvWbav5
+WjS6jJRYfa9VVkrrcgct0NiSLBPNx1pepgw1lqVlrnnjNnC9kkfHwnYt+5oXPGqlgs0s55rPfbWp
+2u0k6NDyyvJC+ETVrgRkbGr5VlV/vWFfaakyI68tHyxvLS8te2rPK15Yflq+CPHdsNpWaQbfW95Y
+DtSWVzyzHGm9Y1V86ox2XZ/uq8IMvrM8t+xYFpYTff/Edc3YH/TUcfTzsifa5QOBhw4NqmxP30vu
+1LuDhur8TIImWnlHyyf6nKpz+c802nBF+Q10Ja674kYPce2DgoKCgoKCgoKCgoKCgoKCgoKCgoKC
+goKCgoKCgoKCPgraho6RMD3aOlE/vKYJf0fC1KnbbuGpowI/xCZnob9Hmi9cWxmCc6vqGm200mW4
+GRWTcyUgan7l2i71/aYLLVtaupWmSh7MsqfdvNLfpa1sdOmrHQv146PysjwkZFfYM8tTtechOF8t
+Hy2fLJ/DzaiZC1XcDql0pj6d9al0NKBP5337dDTg6Dd9j/6DnKePckXxXwoUFBQUFBQUFBQUFBQU
+FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU
+FBQUFBT0v0Drd5r695reC63B5Ta4L1qw8qy+hcMHo/7BgBnKTxWcae6fKNjep9JGFebHE55pPg/V
+YwrLlAZUGvpWmgb0adu3T9OAo9/2PfppwHka/uV5yrUPCgoKCgoKCgoKCgoKOvCneVv9fS+0vmey
+0PL6F3Rv1P8E/6WbBudqm2nZchOcttzeyO+HyK92KO+bmGrZ2lsdwX25PnhjbTDpc0ZOLT8sRw5f
+uFshGystVeZd/q7d3HW7f6y2eRfYhfo3X8z0Oa88UXvpkstQveXCT7FjQ7Hqgh3XTU24/bKKVV+0
+LI9uA7E6Mza+RyJuOY/jlhs1jzf9FmAAOjJuNUjoZ+YAAAAASUVORK5CYII=" transform="matrix(-1 0 0 -1 25 410.8728)">
+		</image>
+		<g>
+			<g>
+				<g>
+					<polyline fill="#1C1C1C" points="16.812,302.814 14.43,302.809 14.292,408.734 22.705,408.746 22.843,302.821 20.46,302.818 
+											"/>
+				</g>
+				<g>
+					<path fill="#1C1C1C" d="M20.46,302.818l0.26-196.951c-1.208,0.119-2.429,0.121-3.648-0.001l-0.26,196.948"/>
+				</g>
+				<g>
+					<path fill="#1C1C1C" d="M20.46,201.318L20.72,4.367c-1.208,0.119-2.429,0.121-3.648-0.001l-0.26,196.948"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="秒針_變">
+</g>
+<g id="分針">
+</g>
+<g id="分針_變">
+</g>
+<g id="時針">
+</g>
+<g id="時針_變">
+</g>
+<g id="按鈕_邊">
+</g>
+<g id="中心">
+</g>
+</svg>

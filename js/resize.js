@@ -1,0 +1,75 @@
+$(function () {
+    $(window).resize(objSizeReset);
+    objSizeReset();
+    function objSizeReset() {
+        convertSizeALL('.outside-frame');
+
+    }
+
+
+
+    $(window).on('load', function () {
+        objSizeReset();
+    });
+
+
+});
+var sRSS
+
+var centerX = 1083
+var centerY = 432
+
+
+var dpsStart
+var dpsEnd
+var dpmStart
+var dpmEnd
+var dphStart
+var dphEnd
+
+
+function convertSizeALL(className) {
+
+
+    var w = 1920, h = 900;
+    var iw = $(window).innerWidth(), ih = $(window).innerHeight();
+    var pRatio = window.devicePixelRatio || 0, xRatio = iw / w, yRatio = ih / h, sRatio = 1;
+    sRatio = Math.min(xRatio, yRatio);
+    sRSS = sRatio
+    $('.background-img').css({ width: Math.round(w * sRatio), height: Math.round(h * sRatio) });
+    $(".background1").css({ width: Math.round(w * sRatio), height: Math.round(h * sRatio) });
+    $(".background").css({ width: Math.round(w * sRatio), height: Math.round(h * sRatio) });
+    $(".time_box").css({ width: Math.round(554 * sRatio), height: Math.round(214 * sRatio), borderRadius: Math.round(15 * sRatio) });
+    $('.timeboxsize').css({ width: Math.round(150 * sRatio), height: Math.round(169 * sRatio), borderRadius: Math.round(15 * sRatio), fontSize: Math.round(123 * sRatio), paddingLeft: Math.round(10 * sRatio) });
+    $('.addL').css({ width: Math.round(60 * sRatio), height: Math.round(29 * sRatio), borderRadius: `${Math.round(15 * sRatio)}px 0 0 0`, fontSize: Math.round(30 * sRatio), paddingLeft: Math.round(10 * sRatio), lineHeight: `${Math.round(22 * sRatio)}px` });
+    $('.addR').css({ width: Math.round(48 * sRatio), height: Math.round(29 * sRatio), borderRadius: `0 ${Math.round(15 * sRatio)}px 0 0`, fontSize: Math.round(30 * sRatio), paddingLeft: `${Math.round(22 * sRatio)}px`, lineHeight: `${Math.round(22 * sRatio)}px` });
+    $('.reduceL').css({ width: Math.round(60 * sRatio), height: Math.round(29 * sRatio), borderRadius: ` 0 0 0 ${Math.round(15 * sRatio)}px`, fontSize: Math.round(30 * sRatio), paddingLeft: Math.round(10 * sRatio), lineHeight: `${Math.round(22 * sRatio)}px` });
+    $('.reduceR').css({ width: Math.round(44 * sRatio), height: Math.round(29 * sRatio), borderRadius: `0 0 ${Math.round(15 * sRatio)}px 0`, fontSize: Math.round(30 * sRatio), paddingLeft: `${Math.round(26 * sRatio)}px`, lineHeight: `${Math.round(22 * sRatio)}px` });
+    $('.num_clock_btn,.kiseki_btn').css({ width: Math.round(348 * sRatio), height: Math.round(145 * sRatio) })
+    $('.hour_btn,.min_btn,.sec_btn').css({ width: Math.round(166 * sRatio), height: Math.round(166 * sRatio) });
+    $('.backpage_btn,.close_btn').css({ width: Math.round(119 * sRatio), height: Math.round(119 * sRatio) });
+    $('.clock,.line').css({ width: Math.round(716 * sRatio), height: Math.round(711 * sRatio) });
+    $('.sechand').css({ width: Math.round(38 * sRatio), height: Math.round(409 * sRatio) });
+    $('.minhand').css({ width: Math.round(44 * sRatio), height: Math.round(263 * sRatio) });
+    $('.hourhand').css({ width: Math.round(95 * sRatio), height: Math.round(211 * sRatio) });
+    $('.dot').css({ width: Math.round(23 * sRatio), height: Math.round(23 * sRatio) });
+    $('.drawareasec,.drawareamin,.drawareahour').css({ width: Math.round(716 * sRatio), height: Math.round(711 * sRatio) });
+    $('.shadow').css({ width: Math.round(752 * sRatio), height: Math.round(752 * sRatio) });
+
+    centerX = $('.dot').offset().left + $('.dot').width() / 2
+    centerY = $('.dot').offset().top + $('.dot').height() / 2
+    a = Math.round(716 * sRSS)
+    b = Math.round(711 * sRSS)
+    // var arc = d3.svg.arc()
+    //     .innerRadius(260 * sRSS)
+    //     .outerRadius(330 * sRSS)
+    //     .startAngle(90 * (pi / 180)) //converting from degs to radians
+    //     .endAngle(360 * (pi / 180)) //just radians
+    // $('.drawarea svg').empty()
+    // vis.append("path")
+    //     .style("fill", '#84E071')
+    //     .attr("d", arc)
+    //     .attr("transform", `translate(${a / 2},${b / 2})`)
+    $('svg').empty()
+
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="22.518px" height="22.521px" viewBox="0 0 22.518 22.521" enable-background="new 0 0 22.518 22.521" xml:space="preserve">
+<g id="圖層_1">
+</g>
+<g id="按鍵">
+</g>
+<g id="電子鐘">
+</g>
+<g id="軌跡">
+</g>
+<g id="軌跡_時" display="none">
+</g>
+<g id="軌跡_分" display="none">
+</g>
+<g id="軌跡_秒" display="none">
+</g>
+<g id="秒針">
+</g>
+<g id="秒針_變">
+</g>
+<g id="分針">
+</g>
+<g id="分針_變">
+</g>
+<g id="時針">
+</g>
+<g id="時針_變">
+</g>
+<g id="按鈕_邊">
+</g>
+<g id="中心">
+	<path fill="#FFFFFF" d="M22.518,11.261c0,6.22-5.042,11.261-11.258,11.261C5.037,22.521,0,17.481,0,11.261C0,5.042,5.037,0,11.26,0
+		C17.476,0,22.518,5.042,22.518,11.261z"/>
+</g>
+</svg>

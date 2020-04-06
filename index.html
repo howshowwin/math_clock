@@ -4,79 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="clock.css">
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <title>數學小工具積木</title>
+    <link rel="stylesheet" href="css/clock.css">
+    <!-- <script src="js/d3.js"></script> -->
+    <script src="js/d3.js"></script>
 
 </head>
 
 <body>
-    <div class="clock">
-        <div class="outer-clock-face">
-            <div class="marking marking-one"></div>
-            <div class="marking marking-two"></div>
-            <div class="marking marking-three"></div>
-            <div class="marking marking-four"></div>
-            <div class="inner-clock-face">
-                <canvas id="cvs" class="display_none" width="400" height="400"></canvas>
-                <canvas id="cvs_2" class="display_none" width="400" height="400"></canvas>
-                <canvas id="cvs_3" class="display_none" width="400" height="400"></canvas>
-
-                <div class="hand hour-hand"></div>
-                <div class="hand min-hand"></div>
-                <div class="hand second-hand"></div>
+    <div class="background-img"></div>
+    <div class="background">
+        
+        <!-- 以下左側電子時鐘 -->
+        <div class="time_box display_none">
+            <div class="timeboxsize hour_box" data-value="00" data-hour="true">
+                <div class="numberhour"></div>
+                <div class="ten_add addL color">+</div>
+                <div class="ten_reduce reduceL color">-</div>
+                <div class="one_add addR color">+</div>
+                <div class="one_reduce reduceR color">-</div>
+            </div>
+            <div class="timeboxsize min_box" data-value="00" data-min="true">
+                <div class="numbermin"></div>
+                
+                <div class="ten_add addL color">+</div>
+                <div class="ten_reduce reduceL color">-</div>
+                <div class="one_add addR color">+</div>
+                <div class="one_reduce reduceR color">-</div>
+            </div>
+            <div class="timeboxsize sec_box" data-value="00" data-sec="true">
+                <div class="numbersec"></div>
+                
+                <div class="ten_add addL color">+</div>
+                <div class="ten_reduce reduceL color">-</div>
+                <div class="one_add addR color">+</div>
+                <div class="one_reduce reduceR color">-</div>
             </div>
         </div>
-    </div>
 
+        <!-- 以下右側按鈕區域 -->
+        <div class="num_clock_btn"></div>
+        <div class="kiseki_btn"></div>
+        <div class="hour_btn"></div>
+        <div class="min_btn"></div>
+        <div class="sec_btn"></div>
+        <div class="backpage_btn"></div>
+        <div class="close_btn"></div>
 
-    <div class="eleClock display_none">
+        <div class="drawareasec bnn display_none"></div>
+        <div class="drawareahour bnn display_none"></div>
+        <div class="drawareamin bnn display_none"></div>
+        <div class="line"></div>
 
+        <div class="shadow"></div>
+        <div class="sechand display_none"></div>
 
-        <div class="h shake shake-slow"></div>
-        <div class="m shake shake-slow"></div>
-        <div class="s shake shake-slow"></div>
-        <div class="top_area">
-
-            <div class="change_time_button hour_ten_add">+</div>
-            <div class="change_time_button hour_add">+</div>
-            <div class="change_time_button min_ten_add">+</div>
-            <div class="change_time_button min_add">+</div>
-            <div class="change_time_button second_ten_add">+</div>
-            <div class="change_time_button second_add">+</div>
-
-
-        </div>
-
-        <div class="down_area">
-            <div class="change_time_button hour_ten_cut">-</div>
-            <div class="change_time_button hour_cut">-</div>
-            <div class="change_time_button min_ten_cut">-</div>
-            <div class="change_time_button min_cut">-</div>
-            <div class="change_time_button second_ten_cut">-</div>
-            <div class="change_time_button second_cut">-</div>
-        </div>
-
-
-
+        <div class="minhand"></div>
+        <div class="hourhand"></div>
+        <div class="clock"></div>
+        
+        <div class="dot"></div>
 
     </div>
 
 
+    <!-- <div class="background1"> </div> -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/clickfunction.js"></script>
+    <script src="js/resize.js"></script>
 
-    <button class="btn hour_close">關閉時針</button>
-
-    <button class="btn mins_close">關閉分針</button>
-    <button class="btn second_close">關閉秒針</button>
-    <button class="btn eleClock_close">開啟電子時鐘</button>
-
-    <button class="btn track_close">開啟軌跡</button>
-    <button class="btn reset">RESET</button>
-
-
-    <script type="text/javascript" src="clock.js"></script>
-    
 </body>
 
 </html>
