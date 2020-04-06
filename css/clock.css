@@ -4,15 +4,19 @@
     font-family: "微軟正黑體";
     font-weight: 300;
     color: #67FE73;
-    
 }
 
+
 body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
     position: relative;
 }
-.display_none{
+
+.display_none {
     display: none;
 }
+
 .background1 {
     background: url(../img/index.jpg);
     background-size: cover;
@@ -29,222 +33,237 @@ body {
     pointer-events: none;
     top: 0;
 }
+
 /* 434A54 67FE73 */
+
 .background {
     position: relative;
 }
-.time_box{
+
+.time_box {
     background: #F6F7FB;
     position: absolute;
     top: 37.0%;
     left: 3.25%;
 }
-.hour_box{
-    background: #434A54 ;
+
+.hour_box {
+    background: #434A54;
     position: absolute;
     top: 10.5%;
     left: 4%;
 }
-.min_box{
-    background: #434A54 ;
+
+.min_box {
+    background: #434A54;
     position: absolute;
     top: 10.5%;
     left: 35.4%;
 }
-.sec_box{
-    background: #434A54 ;
+
+.sec_box {
+    background: #434A54;
     position: absolute;
     top: 10.5%;
     left: 67.2%;
 }
-.ten_add{
+
+.ten_add {
     position: absolute;
     top: -30.2%;
     left: 5%;
     text-align: center;
     line-height: 0;
 }
-.one_add{
+
+.one_add {
     position: absolute;
     top: -30.2%;
     left: 50%;
 }
-.ten_reduce{
+
+.ten_reduce {
     position: absolute;
     top: 113.5%;
     left: 5%;
     text-align: center;
     line-height: 0;
 }
-.one_reduce{
+
+.one_reduce {
     position: absolute;
-    top:  113.5%;
+    top: 113.5%;
     left: 50%;
 }
+
 /* FF9798 29BBF4 84DD71 */
-.hour_box .color{
-    background : #FF9798 ; 
-    color : #fff;
-    cursor: pointer;
 
-}
-.min_box .color{
-    background : #29BBF4 ; 
-    color : #fff;
+.hour_box .color {
+    background: #FF9798;
+    color: #fff;
     cursor: pointer;
-
-}
-.sec_box .color{
-    background : #84DD71 ; 
-    color : #fff;
-    cursor: pointer;
-
 }
 
+.min_box .color {
+    background: #29BBF4;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sec_box .color {
+    background: #84DD71;
+    color: #fff;
+    cursor: pointer;
+}
 
 /* btn */
-    .num_clock_btn{
-        background: url(../img/bt1.svg);
-        background-size: cover;
-        position: absolute;
-        top: 4.7%;
-        left: 79.7%;
-        cursor: pointer;
-    }
-    .kiseki_btn{
-        background: url(../img/bt2.svg);
-        background-size: cover;
-        cursor: pointer;
 
-        position: absolute;
-        top: 21.6%;
-        left: 79.65%
-    }
-    .hour_btn{
-        background: url(../img/bt3-1.svg);
-        background-size: cover;
-        cursor: pointer;
+.num_clock_btn {
+    background: url(../img/bt1.svg);
+    background-size: cover;
+    position: absolute;
+    top: 4.7%;
+    left: 79.7%;
+    cursor: pointer;
+}
 
-        position: absolute;
-        top: 41.6%;
-        left: 80.6%
-    }
-    .min_btn{
-        background: url(../img/bt4-1.svg);
-        background-size: cover;
-        cursor: pointer;
+.kiseki_btn {
+    background: url(../img/bt2.svg);
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 21.6%;
+    left: 79.65%
+}
 
-        position: absolute;
-        top: 63%;
-        left: 77.4%
-    }
-    .sec_btn{
-        background: url(../img/bt5.svg);
-        background-size: cover;
-        position: absolute;
-        cursor: pointer;
+.hour_btn {
+    background: url(../img/bt3-1.svg);
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 41.6%;
+    left: 80.6%
+}
 
-        top: 79.6%;
-        left: 71.6%
-    }
-    svg{
-        pointer-events: none;
-    }
-    .backpage_btn{
-        background: url(../img/btH.svg);
-        background-size: cover;
-        position: absolute;
-        top: 85.2%;
-        cursor: pointer;
+.min_btn {
+    background: url(../img/bt4-1.svg);
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 63%;
+    left: 77.4%
+}
 
-        left: 85.4%
-    }
-    .close_btn{
-        background: url(../img/btX.svg);
-        background-size: cover;
-        position: absolute;
-        cursor: pointer;
+.sec_btn {
+    background: url(../img/bt5.svg);
+    background-size: cover;
+    position: absolute;
+    cursor: pointer;
+    top: 79.6%;
+    left: 71.6%
+}
 
-        top:85.2%;
-        left: 92.8%
-    }
+svg {
+    pointer-events: none;
+}
 
-    /* CLOCK */
-    .clock{
-        background: url(../img/aO.svg);
-        background-size: cover;
-        position: absolute;
-        top:8.68%;
-        left: 37.89%;
-        pointer-events: none;
-    }
-    .line{
-        background: url(../img/aO2.svg);
-        background-size: cover;
-        position: absolute;
-        top:8.68%;
-        left: 37.89%;
-        pointer-events: none;
-    }
-    .sechand{
-        background: url(../img/a3.svg);
-        background-size: cover;
-        position: absolute;
-        top:12%;
-        left: 55.55%;
-        cursor: pointer;
+.backpage_btn {
+    background: url(../img/btH.svg);
+    background-size: cover;
+    position: absolute;
+    top: 85.2%;
+    cursor: pointer;
+    left: 85.4%
+}
 
-        transform-origin: 50% 79%;
+.close_btn {
+    background: url(../img/btX.svg);
+    background-size: cover;
+    position: absolute;
+    cursor: pointer;
+    top: 85.2%;
+    left: 92.8%
+}
 
-    }
-    .minhand{
-        background: url(../img/a2.svg);
-        background-size: cover;
-        position: absolute;
-        top:18%;
-        left: 55.1% ; 
-        cursor: pointer;
-        
-        transform-origin: 60% 102%;
-    }
-    .hourhand{
-        background: url(../img/a1.svg);
-        background-size: cover;
-        position: absolute;
-        top:23.5%;
-        left: 53.6%;
-        transform-origin: 55% 102%;
-        cursor: pointer;
+/* CLOCK */
 
-    }
-    .dot{
-        background: url(../img/aP.svg);
-        /* background:#d55; */
+.clock {
+    background: url(../img/aO.svg);
+    background-size: cover;
+    position: absolute;
+    top: 8.68%;
+    left: 37.89%;
+    pointer-events: none;
+}
 
-        background-size: cover;
-        position: absolute;
-        top:46.8%;
-        left: 56%
-    }
-    .canvas-container{
-        background: #ffffff;
-        position: absolute;
-        top:8.68%;
-        left: 37.89%
+.line {
+    background: url(../img/aO2.svg);
+    background-size: cover;
+    position: absolute;
+    top: 8.68%;
+    left: 37.89%;
+    pointer-events: none;
+}
 
-    }
+.sechand {
+    background: url(../img/a3.svg);
+    background-size: cover;
+    position: absolute;
+    top: 12%;
+    left: 55.55%;
+    cursor: pointer;
+    transform-origin: 50% 79%;
+}
 
-    /* draw */
-    .drawareasec,.drawareamin,.drawareahour{
-        position: absolute;
-        top:8.68%;
-        left: 37.89%;
-    }
-    .shadow{
-        background: url(../img/shadow.png);
-        background-size: cover;
-        position: absolute;
-        top:6.5%;
-        left: 37.1%;
-        pointer-events: none;
-    }
+.minhand {
+    background: url(../img/a2.svg);
+    background-size: cover;
+    position: absolute;
+    top: 18%;
+    left: 55.1%;
+    cursor: pointer;
+    transform-origin: 60% 102%;
+}
+
+.hourhand {
+    background: url(../img/a1.svg);
+    background-size: cover;
+    position: absolute;
+    top: 23.5%;
+    left: 53.6%;
+    transform-origin: 55% 102%;
+    cursor: pointer;
+}
+
+.dot {
+    background: url(../img/aP.svg);
+    /* background:#d55; */
+    background-size: cover;
+    position: absolute;
+    top: 46.8%;
+    left: 56%
+}
+
+.canvas-container {
+    background: #ffffff;
+    position: absolute;
+    top: 8.68%;
+    left: 37.89%
+}
+
+/* draw */
+
+.drawareasec, .drawareamin, .drawareahour {
+    position: absolute;
+    top: 8.68%;
+    left: 37.89%;
+}
+
+.shadow {
+    background: url(../img/shadow.png);
+    background-size: cover;
+    position: absolute;
+    top: 6.5%;
+    left: 37.1%;
+    pointer-events: none;
+}
