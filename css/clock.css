@@ -168,7 +168,7 @@ svg {
 }
 
 .backpage_btn {
-    background: url(../img/btH.svg);
+    background: url(../img/btH.png);
     background-size: cover;
     position: absolute;
     top: 85.2%;
@@ -177,7 +177,7 @@ svg {
 }
 
 .close_btn {
-    background: url(../img/btX.svg);
+    background: url(../img/btX.png);
     background-size: cover;
     position: absolute;
     cursor: pointer;
@@ -230,18 +230,18 @@ svg {
     background-size: cover;
     position: absolute;
     top: 23.5%;
-    left: 53.6%;
-    transform-origin: 55% 102%;
+    left: 53.7%;
+    transform-origin: 57% 105%;
     cursor: pointer;
 }
 
 .dot {
-    background: url(../img/aP.svg);
+    background: url(../img/aP.png);
     /* background:#d55; */
     background-size: cover;
     position: absolute;
-    top: 46.8%;
-    left: 56%
+    top: 46%;
+    left: 55.5%
 }
 
 .canvas-container {

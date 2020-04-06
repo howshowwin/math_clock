@@ -52,7 +52,7 @@ function convertSizeALL(className) {
     $('.sechand').css({ width: Math.round(38 * sRatio), height: Math.round(409 * sRatio) });
     $('.minhand').css({ width: Math.round(44 * sRatio), height: Math.round(263 * sRatio) });
     $('.hourhand').css({ width: Math.round(95 * sRatio), height: Math.round(211 * sRatio) });
-    $('.dot').css({ width: Math.round(23 * sRatio), height: Math.round(23 * sRatio) });
+    $('.dot').css({ width: Math.round(46 * sRatio), height: Math.round(46 * sRatio) });
     $('.drawareasec,.drawareamin,.drawareahour').css({ width: Math.round(716 * sRatio), height: Math.round(711 * sRatio) });
     $('.shadow').css({ width: Math.round(752 * sRatio), height: Math.round(752 * sRatio) });
 
