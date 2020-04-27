@@ -740,7 +740,7 @@ $('html').mouseup(function () {
 
 // mobtargetTouches[""0""].clientX
 function rotate_hour_moblie(e) {
-  e.preventDefault()
+
   let minvalue = $(".min_box").data("value")
 
   minvalue = parseInt(minvalue)
@@ -808,7 +808,6 @@ function rotate_hour_moblie(e) {
 
 }
 function rotate_min_moblie(e) {
-  e.preventDefault()
   const x = e.touches[0].clientX - centerX;
   const y = e.touches[0].clientY - centerY;
 
@@ -880,7 +879,6 @@ function rotate_min_moblie(e) {
 
 
 function rotate_second_moblie(e) {
-  e.preventDefault()
   const x = e.touches[0].clientX - centerX;
   const y = e.touches[0].clientY - centerY;
 
