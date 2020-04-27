@@ -16,19 +16,19 @@ $(function () {
 });
 
 
-isIosStopScroll() {
+function isIosStopScroll() {
     const ios = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // 判斷是否爲ios
     if (ios) {
-      var divEl = document.getElementById('background'); //這是你需要定義的容器，這個容器裏滑動正常，出了這個容器，頁面的橡皮筋效果就被禁用掉了
-      iosTrouchFn(divEl);
+        var divEl = document.getElementById('background'); //這是你需要定義的容器，這個容器裏滑動正常，出了這個容器，頁面的橡皮筋效果就被禁用掉了
+        iosTrouchFn(divEl);
     }
- }
+}
 
- componentDidMount() {
+function componentDidMount() {
     this.init(); //這是頁面加載內容的事件，可以忽略
     this.isIosStopScroll(); //這裏開始執行
- }
-
+}
+componentDidMount()
 var sRSS
 
 var centerX = 1083
