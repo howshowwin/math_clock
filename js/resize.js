@@ -16,10 +16,9 @@ $(function () {
 });
 
 
-var canvas = new fabric.Canvas('canvas');
-canvas.setHeight(500);
-canvas.setWidth(500);
-
+document.body.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+}, { passive: false });
 var sRSS
 
 var centerX = 1083
