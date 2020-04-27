@@ -6,6 +6,9 @@ var secopen = 0
 $('.num_clock_btn').click(function () {
   if (eleclockopen == 0) {
     $('.time_box').removeClass('display_none')
+
+    $(".time_box_frame").css({ width: Math.round(374 * sRatio)})
+    $('.whitebox').removeClass('display_none_another')
     $('.num_clock_btn').css({
       background: "url(img/bt1-1.png)",
       backgroundSize: 'cover'
@@ -15,6 +18,10 @@ $('.num_clock_btn').click(function () {
   }
   else if (eleclockopen == 1) {
     $('.time_box').addClass('display_none')
+
+    $(".time_box_frame").css({ width: Math.round(604 * sRatio)})
+    $('.whitebox').addClass('display_none_another')
+
     $('.num_clock_btn').css({
       background: "url(img/bt1.svg)",
       backgroundSize: 'cover'
@@ -51,7 +58,7 @@ $('.kiseki_btn').click(function () {
 $('.hour_btn').click(function () {
   if (houropen == 1) {
     $('.hourhand').addClass('display_none')
-    $('.drawareahour svg').empty()
+    $('.drawareahour svg').addClass('display_none')
 
     $('.hour_btn').css({
       background: "url(img/bt3.svg)",
@@ -62,7 +69,7 @@ $('.hour_btn').click(function () {
   }
   else if (houropen == 0) {
     $('.hourhand').removeClass('display_none')
-
+    $('.drawareahour svg').removeClass('display_none')
     $('.hour_btn').css({
       background: "url(img/bt3-1.svg)",
       backgroundSize: 'cover'
@@ -74,7 +81,7 @@ $('.hour_btn').click(function () {
 $('.min_btn').click(function () {
   if (minopen == 1) {
     $('.minhand').addClass('display_none')
-    $('.drawareamin svg').empty()
+    $('.drawareamin svg').addClass('display_none')
     $('.min_btn').css({
       background: "url(img/bt4.svg)",
       backgroundSize: 'cover'
@@ -84,7 +91,7 @@ $('.min_btn').click(function () {
   }
   else if (minopen == 0) {
     $('.minhand').removeClass('display_none')
-
+    $('.drawareamin svg').removeClass('display_none')
     $('.min_btn').css({
       background: "url(img/bt4-1.svg)",
       backgroundSize: 'cover'
@@ -97,6 +104,10 @@ $('.sec_btn').click(function () {
   if (secopen == 0) {
 
     $('.sechand').removeClass('display_none')
+    $('.drawareasec svg').removeClass('display_none')
+    $('.sec_box').removeClass('display_none')
+    $('.whitebox').addClass('display_none')
+    $(".time_box_frame").css({ width: Math.round(604 * sRatio)})
 
     $('.sec_btn').css({
       background: "url(img/bt5-1.svg)",
@@ -106,7 +117,10 @@ $('.sec_btn').click(function () {
   }
   else if (secopen == 1) {
     $('.sechand').addClass('display_none')
-    $('.drawareasec svg').empty()
+    $('.drawareasec svg').addClass('display_none')
+    $('.sec_box').addClass('display_none')
+    $('.whitebox').removeClass('display_none')
+    $(".time_box_frame").css({ width: Math.round(374 * sRatio)})
     $('.sec_btn').css({
       background: "url(img/bt5.svg)",
       backgroundSize: 'cover'
@@ -207,15 +221,16 @@ function addtime(thisadd, num) {
   input = parseInt(input)
   input = input + num
   console.log(input)
-  if (input > 23 && houraddreducenow == 1) {
-    input = input - 24
+  if (input > 12 && houraddreducenow == 1) {
+    input = input - 12
   }
 
   if (input > 59 && houraddreducenow == 0 && minaddreducenow == 1) {
     let hourvalue = $(".hour_box").data("value")
     hourvalue = parseInt(hourvalue) + 1
-    if (hourvalue > 23) {
-      hourvalue = hourvalue - 24
+    if (hourvalue > 12) {
+      hourvalue = hourvalue - 12
+
     }
     if (hourvalue < 10 && hourvalue >= 0) {
       hourvalue = "0" + hourvalue
@@ -224,12 +239,25 @@ function addtime(thisadd, num) {
     input = input - 60
   }
 
+
+
   if (input > 59 && houraddreducenow == 0 && secaddreducenow == 1) {
     let minvalue = $(".min_box").data("value")
     minvalue = parseInt(minvalue) + 1
+
     if (minvalue > 59) {
       minvalue = minvalue - 60
+      let hourvalue = $(".hour_box").data("value")
+      hourvalue = parseInt(hourvalue) + 1
+      if (hourvalue > 12) {
+        hourvalue = hourvalue - 12
+      }
+      if (hourvalue < 10 && hourvalue >= 0) {
+        hourvalue = "0" + hourvalue
+      }
+      $(".hour_box").data("value", hourvalue)
     }
+
     if (minvalue < 10 && minvalue >= 0) {
       minvalue = "0" + minvalue
     }
@@ -237,14 +265,20 @@ function addtime(thisadd, num) {
     input = input - 60
   }
 
+
+
+
   if (input < 10 && input >= 0) {
     input = "0" + input
   }
+
+
+
   if (input < 0 && houraddreducenow == 0 && minaddreducenow == 1) {
     let hourvalue = $(".hour_box").data("value")
     hourvalue = parseInt(hourvalue) - 1
     if (hourvalue < 0) {
-      hourvalue = hourvalue + 24
+      hourvalue = hourvalue + 12
     }
     if (hourvalue < 10 && hourvalue >= 0) {
       hourvalue = "0" + hourvalue
@@ -258,16 +292,34 @@ function addtime(thisadd, num) {
     minvalue = parseInt(minvalue) - 1
     if (minvalue < 0) {
       minvalue = minvalue + 60
+      let hourvalue = $(".hour_box").data("value")
+      hourvalue = parseInt(hourvalue) - 1
+      if (hourvalue < 0) {
+        hourvalue = hourvalue + 12
+      }
+      if (hourvalue < 10 && hourvalue >= 0) {
+        hourvalue = "0" + hourvalue
+      }
+      $(".hour_box").data("value", hourvalue)
+
     }
     if (minvalue < 10 && minvalue >= 0) {
       minvalue = "0" + minvalue
     }
+
     $(".min_box").data("value", minvalue)
     input = 60 + input
 
   }
   if (input < 0 && houraddreducenow == 1) {
-    input = 24 + input
+    input = 12 + input
+
+    input = "0" + input
+
+  }
+  if (input == '00' && houraddreducenow == 1) {
+    input = '12'
+
   }
   houraddreducenow = 0
   minaddreducenow = 0
@@ -334,19 +386,12 @@ function rotate_hour(e) {
 
   var a = Math.atan2(y, x) * 180 / Math.PI;
 
-  if (a >= -180 && a < 0) {
-    var e = a % 30
-    a = a - e
-    a = a - 30
-  }
-  else {
-    var e = a % 30
-    a = a - e
-  }
 
-  // Rotate
-  console.log(a)
-  el_hour.style.transform = `rotate(${a + minvalue * 0.5 + 90}deg)`;
+
+  el_hour.style.transform = `rotate(${Math.floor(a + 90)}deg)`;
+
+  el_min.style.transform = `rotate(${Math.floor((a) * 12)}deg)`;
+
 
 
 
@@ -355,10 +400,14 @@ function rotate_hour(e) {
 
 
   cc = parseInt(cc)
-  console.log(cc)
+  // console.log(cc)
 
 
+  let bb = el_min.style.transform.slice(7, 25)
 
+
+  bb = parseInt(bb)
+  bb = bb % 360
 
 
   if (cc < 0) {
@@ -377,47 +426,13 @@ function rotate_hour(e) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-}
-function rotate_min(e) {
-  const x = e.clientX - centerX;
-  const y = e.clientY - centerY;
-
-  // Calculate angle based on mouse position
-  var a = Math.atan2(y, x) * 180 / Math.PI;
-  var k = Math.floor(a) % 6
-  a = Math.floor(a) - k
-  console.log(a)
-  // Rotate
-  el_min.style.transform = `rotate(${a + 90}deg)`;
-
-
-  let bb = el_min.style.transform.slice(7, 25)
-
-
-  bb = parseInt(bb)
-
-
-
-
   if (bb < 0) {
     bb = 360 + bb
   }
   if (bb != orimin) {
     $('.drawareamin svg').empty()
   }
-  if (orimin >= bb) {
+  if (orimin > bb) {
     let bb1 = bb + 360
     drawpathmin(orimin, bb1)
   } else {
@@ -426,7 +441,84 @@ function rotate_min(e) {
 
 
 
+
+
+
+
+
+
+
+
 }
+
+
+function rotate_min(e) {
+  const x = e.clientX - centerX;
+  const y = e.clientY - centerY;
+
+  // Calculate angle based on mouse position
+  var a = Math.atan2(y, x) * 180 / Math.PI;
+  var k = Math.floor(a) % 6
+  a = Math.floor(a) - k
+  // Rotate
+  el_min.style.transform = `rotate(${a + 90}deg)`;
+
+
+
+  let bb = el_min.style.transform.slice(7, 25)
+
+
+
+
+
+
+  bb = parseInt(bb)
+  if (bb < 0) {
+    bb = 360 + bb
+    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
+
+  }
+  if (bb != orimin) {
+    $('.drawareamin svg').empty()
+  }
+
+  if (orimin >= bb) {
+    let bb1 = bb + 360
+    el_hour.style.transform = `rotate(${m_cc + (bb1) / 12}deg)`;
+
+    drawpathmin(orimin, bb1)
+  } else {
+    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
+
+    drawpathmin(orimin, bb)
+  }
+
+
+
+
+  let cc = el_hour.style.transform.slice(7, 25)
+  cc = parseInt(cc)
+
+  if (cc <= 0) {
+    cc = cc
+  }
+  if (orihour >= 360) {
+    orihour = orihour - 360
+  }
+  if (cc != orihour) {
+    $('.drawareahour svg').empty()
+  }
+  console.log(cc, orihour)
+  if (orihour >= cc) {
+    // let cc1 = cc + 360
+    drawpathhour(orihour, cc)
+  } else {
+    drawpathhour(orihour, cc)
+  }
+
+}
+
+
 
 
 
@@ -530,15 +622,35 @@ function settimegogo() {
     drawpathhour(orihour, cc)
   }
 }
+var m_cc
+
+var h_cc
 
 
 $(".minhand").mousedown(function () {
-
+  m_cc = $(".hour_box").data("value")
+  if (m_cc == 12) {
+    m_cc = 0
+  }
+  console.log(m_cc)
+  m_cc = 30 * m_cc
+  if (m_cc == '') {
+    m_cc = 0
+  }
+  m_cc = parseInt(m_cc)
   document.addEventListener('mousemove', rotate_min);
 
 })
 $(".hourhand").mousedown(function () {
+  h_cc = $(".min_box").data("value")
 
+  h_cc = 6 * h_cc
+  if (h_cc == '') {
+    h_cc = 0
+  }
+  h_cc = parseInt(h_cc)
+  console.log(h_cc)
+  
   document.addEventListener('mousemove', rotate_hour);
 
 
@@ -553,6 +665,7 @@ $('html').mouseup(function () {
   document.removeEventListener('mousemove', rotate_min);
   document.removeEventListener('mousemove', rotate_second);
   let aa = el_sec.style.transform.slice(7, 25)
+
   if (aa) {
     aa = parseInt(aa)
     if (aa < 0) {
@@ -569,17 +682,27 @@ $('html').mouseup(function () {
 
 
   let bb = el_min.style.transform.slice(7, 25)
+
+
   if (bb) {
+
     bb = parseInt(bb)
+    bb = bb % 360
+
     if (bb < 0) {
       bb = 360 + bb
     }
     orimin = bb
     bb = Math.round(bb / 6)
+    if (bb == 60) {
+      bb = 0
+    }
     if (bb < 10) {
       bb = "0" + bb
     }
+
     $(".min_box").data("value", bb)
+
   }
 
 
@@ -594,13 +717,17 @@ $('html').mouseup(function () {
     if (cc > 360) {
       cc = cc - 360
     }
+    console.log(cc)
     cc = Math.floor(cc / 30)
+    if (cc == 0) {
+      cc = 12
+    }
     if (cc < 10) {
       cc = "0" + cc
     }
+
     $(".hour_box").data("value", cc)
   }
-
 
 })
 
@@ -621,19 +748,59 @@ function rotate_hour_moblie(e) {
 
   var a = Math.atan2(y, x) * 180 / Math.PI;
 
-  if (a >= -180 && a < 0) {
-    var e = a % 30
-    a = a - e
-    a = a - 30
+
+
+  el_hour.style.transform = `rotate(${Math.floor(a + 90)}deg)`;
+
+  el_min.style.transform = `rotate(${Math.floor((a) * 12)}deg)`;
+
+
+
+
+
+  let cc = el_hour.style.transform.slice(7, 25)
+
+
+  cc = parseInt(cc)
+  // console.log(cc)
+
+
+  let bb = el_min.style.transform.slice(7, 25)
+
+
+  bb = parseInt(bb)
+  bb = bb % 360
+
+
+  if (cc < 0) {
+    cc = 360 + cc
   }
-  else {
-    var e = a % 30
-    a = a - e
+  if (cc != orihour) {
+    $('.drawareahour svg').empty()
+  }
+  if (orihour >= cc) {
+    let cc1 = cc + 360
+    drawpathhour(orihour, cc1)
+  } else {
+    drawpathhour(orihour, cc)
   }
 
-  // Rotate
-  console.log(a)
-  el_hour.style.transform = `rotate(${a + minvalue * 0.5 + 90}deg)`;
+
+
+
+  if (bb < 0) {
+    bb = 360 + bb
+  }
+  if (bb != orimin) {
+    $('.drawareamin svg').empty()
+  }
+  if (orimin > bb) {
+    let bb1 = bb + 360
+    drawpathmin(orimin, bb1)
+  } else {
+    drawpathmin(orimin, bb)
+  }
+
 
 }
 function rotate_min_moblie(e) {
@@ -646,7 +813,61 @@ function rotate_min_moblie(e) {
   a = Math.floor(a) - k
   console.log(a)
   // Rotate
+ 
   el_min.style.transform = `rotate(${a + 90}deg)`;
+
+
+
+  let bb = el_min.style.transform.slice(7, 25)
+
+
+
+
+
+
+  bb = parseInt(bb)
+  if (bb < 0) {
+    bb = 360 + bb
+    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
+
+  }
+  if (bb != orimin) {
+    $('.drawareamin svg').empty()
+  }
+
+  if (orimin >= bb) {
+    let bb1 = bb + 360
+    el_hour.style.transform = `rotate(${m_cc + (bb1) / 12}deg)`;
+
+    drawpathmin(orimin, bb1)
+  } else {
+    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
+
+    drawpathmin(orimin, bb)
+  }
+
+
+
+
+  let cc = el_hour.style.transform.slice(7, 25)
+  cc = parseInt(cc)
+
+  if (cc <= 0) {
+    cc = cc
+  }
+  if (orihour >= 360) {
+    orihour = orihour - 360
+  }
+  if (cc != orihour) {
+    $('.drawareahour svg').empty()
+  }
+  console.log(cc, orihour)
+  if (orihour >= cc) {
+    // let cc1 = cc + 360
+    drawpathhour(orihour, cc)
+  } else {
+    drawpathhour(orihour, cc)
+  }
 }
 
 
@@ -668,14 +889,56 @@ function rotate_second_moblie(e) {
   let now = Math.floor(a) + 90
 
 
+
+  let aa = el_sec.style.transform.slice(7, 25)
+
+
+
+  aa = parseInt(aa)
+
+
+  if (aa < 0) {
+    aa = 360 + aa
+  }
+  if (aa != orisec) {
+    $('.drawareasec svg').empty()
+  }
+  if (orisec >= aa) {
+    let aa1 = aa + 360
+    drawpathsec(orisec, aa1)
+  } else {
+
+    drawpathsec(orisec, aa)
+  }
+
+
 }
 
 $('.hourhand').on('touchstart', function () {
+  h_cc = $(".min_box").data("value")
+
+  h_cc = 6 * h_cc
+  if (h_cc == '') {
+    h_cc = 0
+  }
+  h_cc = parseInt(h_cc)
+  console.log(h_cc)
+  
   document.addEventListener('touchmove', rotate_hour_moblie);
 
 
 });
 $('.minhand').on('touchstart', function () {
+  m_cc = $(".hour_box").data("value")
+  if (m_cc == 12) {
+    m_cc = 0
+  }
+  console.log(m_cc)
+  m_cc = 30 * m_cc
+  if (m_cc == '') {
+    m_cc = 0
+  }
+  m_cc = parseInt(m_cc)
   document.addEventListener('touchmove', rotate_min_moblie);
 
 
@@ -711,6 +974,8 @@ $('html').on('touchend', function () {
   let bb = el_min.style.transform.slice(7, 25)
   if (bb) {
     bb = parseInt(bb)
+    bb = bb % 360
+
     if (bb < 0) {
       bb = 360 + bb
     }
@@ -735,6 +1000,9 @@ $('html').on('touchend', function () {
       cc = cc - 360
     }
     cc = Math.floor(cc / 30)
+    if (cc == 0) {
+      cc = 12
+    }
     if (cc < 10) {
       cc = "0" + cc
     }

@@ -16,31 +16,35 @@
     <div class="background">
         
         <!-- 以下左側電子時鐘 -->
-        <div class="time_box display_none">
-            <div class="timeboxsize hour_box" data-value="00" data-hour="true">
-                <div class="numberhour"></div>
-                <div class="ten_add addL color">+</div>
-                <div class="ten_reduce reduceL color">-</div>
-                <div class="one_add addR color">+</div>
-                <div class="one_reduce reduceR color">-</div>
-            </div>
-            <div class="timeboxsize min_box" data-value="00" data-min="true">
-                <div class="numbermin"></div>
+        <div class="time_box_frame">
+            <div class="time_box display_none">
+                <div class="timeboxsize hour_box" data-value="12" data-hour="true">
+                    <div class="numberhour"></div>
+                    <div class="ten_add addL color">+</div>
+                    <div class="ten_reduce reduceL color">-</div>
+                    <div class="one_add addR color">+</div>
+                    <div class="one_reduce reduceR color">-</div>
+                </div>
+                <div class="timeboxsize min_box" data-value="00" data-min="true">
+                    <div class="numbermin"></div>
+                    
+                    <div class="ten_add addL color">+</div>
+                    <div class="ten_reduce reduceL color">-</div>
+                    <div class="one_add addR color">+</div>
+                    <div class="one_reduce reduceR color">-</div>
+                </div>
+                <div class="timeboxsize sec_box display_none" data-value="00" data-sec="true">
+                    <div class="numbersec"></div>
+                    
+                    <div class="ten_add addL color">+</div>
+                    <div class="ten_reduce reduceL color">-</div>
+                    <div class="one_add addR color">+</div>
+                    <div class="one_reduce reduceR color">-</div>
+                </div>
                 
-                <div class="ten_add addL color">+</div>
-                <div class="ten_reduce reduceL color">-</div>
-                <div class="one_add addR color">+</div>
-                <div class="one_reduce reduceR color">-</div>
-            </div>
-            <div class="timeboxsize sec_box" data-value="00" data-sec="true">
-                <div class="numbersec"></div>
-                
-                <div class="ten_add addL color">+</div>
-                <div class="ten_reduce reduceL color">-</div>
-                <div class="one_add addR color">+</div>
-                <div class="one_reduce reduceR color">-</div>
             </div>
         </div>
+        <div class="whitebox display_none_another"></div>
 
         <!-- 以下右側按鈕區域 -->
         <div class="num_clock_btn"></div>

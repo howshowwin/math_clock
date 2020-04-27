@@ -39,12 +39,27 @@ body {
 .background {
     position: relative;
 }
-
-.time_box {
-    background: #F6F7FB;
+.display_none_another{
+    display: none;
+}
+.time_box_frame{
     position: absolute;
     top: 37.0%;
     left: 3.25%;
+    overflow: hidden;
+}
+.whitebox{
+    position: absolute;
+    top: 40.8%;
+    left: 22%;
+    z-index: 99;
+    background: #F6F7FB;
+}
+.time_box {
+    background: #F6F7FB;
+    position: absolute;
+    top: 10%;
+    left: 0%;
 }
 
 .hour_box {
