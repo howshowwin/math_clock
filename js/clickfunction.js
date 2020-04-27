@@ -8,6 +8,8 @@ $('.num_clock_btn').click(function () {
     $('.time_box').removeClass('display_none')
 
     $(".time_box_frame").css({ width: Math.round(374 * sRSS)})
+    $('.whitebox').removeClass('display_none')
+
     $('.whitebox').removeClass('display_none_another')
     $('.num_clock_btn').css({
       background: "url(img/bt1-1.png)",
@@ -20,6 +22,8 @@ $('.num_clock_btn').click(function () {
     $('.time_box').addClass('display_none')
 
     $(".time_box_frame").css({ width: Math.round(604 * sRSS)})
+    $('.whitebox').addClass('display_none')
+
     $('.whitebox').addClass('display_none_another')
 
     $('.num_clock_btn').css({
