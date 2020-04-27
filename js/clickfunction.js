@@ -7,7 +7,7 @@ $('.num_clock_btn').click(function () {
   if (eleclockopen == 0) {
     $('.time_box').removeClass('display_none')
 
-    $(".time_box_frame").css({ width: Math.round(374 * sRatio)})
+    $(".time_box_frame").css({ width: Math.round(374 * sRSS)})
     $('.whitebox').removeClass('display_none_another')
     $('.num_clock_btn').css({
       background: "url(img/bt1-1.png)",
@@ -19,7 +19,7 @@ $('.num_clock_btn').click(function () {
   else if (eleclockopen == 1) {
     $('.time_box').addClass('display_none')
 
-    $(".time_box_frame").css({ width: Math.round(604 * sRatio)})
+    $(".time_box_frame").css({ width: Math.round(604 * sRSS)})
     $('.whitebox').addClass('display_none_another')
 
     $('.num_clock_btn').css({
@@ -107,7 +107,7 @@ $('.sec_btn').click(function () {
     $('.drawareasec svg').removeClass('display_none')
     $('.sec_box').removeClass('display_none')
     $('.whitebox').addClass('display_none')
-    $(".time_box_frame").css({ width: Math.round(604 * sRatio)})
+    $(".time_box_frame").css({ width: Math.round(604* sRSS)})
 
     $('.sec_btn').css({
       background: "url(img/bt5-1.svg)",
@@ -120,7 +120,7 @@ $('.sec_btn').click(function () {
     $('.drawareasec svg').addClass('display_none')
     $('.sec_box').addClass('display_none')
     $('.whitebox').removeClass('display_none')
-    $(".time_box_frame").css({ width: Math.round(374 * sRatio)})
+    $(".time_box_frame").css({ width: Math.round(374 * sRSS)})
     $('.sec_btn').css({
       background: "url(img/bt5.svg)",
       backgroundSize: 'cover'
