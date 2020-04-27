@@ -14,7 +14,7 @@
 <body>
     <div class="background-img"></div>
     <div class="background">
-        
+
         <!-- 以下左側電子時鐘 -->
         <div class="time_box_frame">
             <div class="time_box display_none">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="timeboxsize min_box" data-value="00" data-min="true">
                     <div class="numbermin"></div>
-                    
+
                     <div class="ten_add addL color">+</div>
                     <div class="ten_reduce reduceL color">-</div>
                     <div class="one_add addR color">+</div>
@@ -35,13 +35,13 @@
                 </div>
                 <div class="timeboxsize sec_box display_none" data-value="00" data-sec="true">
                     <div class="numbersec"></div>
-                    
+
                     <div class="ten_add addL color">+</div>
                     <div class="ten_reduce reduceL color">-</div>
                     <div class="one_add addR color">+</div>
                     <div class="one_reduce reduceR color">-</div>
                 </div>
-                
+
             </div>
         </div>
         <div class="whitebox display_none_another"></div>
@@ -67,14 +67,15 @@
 
         <div class="minhand"></div>
         <div class="hourhand"></div>
-        
-        <div class="dot"></div>
 
+        <div class="dot"></div>
+        <canvas></canvas>
     </div>
 
 
     <!-- <div class="background1"> </div> -->
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/fabric.min.js"></script>
     <script src="js/clickfunction.js"></script>
     <script src="js/resize.js"></script>
 
