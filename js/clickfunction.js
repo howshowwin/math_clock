@@ -8,7 +8,7 @@ $('.num_clock_btn').click(function () {
     $('.time_box').removeClass('display_none')
     $('.whitebox').removeClass('display_none')
     $('.whitebox').removeClass('display_none_another')
-    $(".time_box_frame").css({ width: Math.round(374 * sRSS) })
+    $(".time_box_frame").css({ width: Math.round(364 * sRSS) })
 
     if (secopen == 1) {
       $(".time_box_frame").css({ width: Math.round(604 * sRSS) })
@@ -27,7 +27,7 @@ $('.num_clock_btn').click(function () {
   else if (eleclockopen == 1) {
     $('.time_box').addClass('display_none')
 
-    $(".time_box_frame").css({ width: Math.round(374 * sRSS) })
+    $(".time_box_frame").css({ width: Math.round(364 * sRSS) })
     $('.whitebox').addClass('display_none')
 
     $('.whitebox').addClass('display_none_another')
@@ -64,7 +64,7 @@ $('.kiseki_btn').click(function () {
     $('.sechand').addClass('display_none')
     $('.sec_box').addClass('display_none')
     $('.whitebox').removeClass('display_none')
-    $(".time_box_frame").css({ width: Math.round(374 * sRSS) })
+    $(".time_box_frame").css({ width: Math.round(364 * sRSS) })
     secopen = 0
 
   }
@@ -154,7 +154,7 @@ $('.sec_btn').click(function () {
     $('.sechand').addClass('display_none')
     $('.sec_box').addClass('display_none')
     $('.whitebox').removeClass('display_none')
-    $(".time_box_frame").css({ width: Math.round(374 * sRSS) })
+    $(".time_box_frame").css({ width: Math.round(364 * sRSS) })
     $('.sec_btn').css({
       background: "url(img/bt5.svg)",
       backgroundSize: 'cover'
@@ -532,11 +532,7 @@ function rotate_min(e) {
     drawpathmin(0, 360)
     circleall = 1
   }
-  // if (last_set == a && readold != a && (a - readold) < 0) {
-  //   m_cc = m_cc - 30
 
-  //   console.log(m_cc)
-  // }
   el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
   if (circleall == 1) {
     drawpathmin(0, 360)
@@ -905,7 +901,6 @@ function rotate_min_moblie(e) {
     console.log(orimin)
     bb = bb + 360
   }
-  console.log(last_set_M,readold_M,a)
   if (last_set_M == a && readold_M != a && (a - readold_M) > 0) {
     m_cc = m_cc + 30
     drawpathmin(0, 360)

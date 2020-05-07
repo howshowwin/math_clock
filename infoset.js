@@ -1,1 +1,1 @@
-var set_pic_info =["GM1.svg","GM2.svg"]
+var set_pic_info =["G1.svg"]

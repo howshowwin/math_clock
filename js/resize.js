@@ -46,7 +46,7 @@ function convertSizeALL(className) {
     $(".background").css({ width: Math.round(w * sRatio), height: Math.round(h * sRatio) });
     $(".time_box").css({ width: Math.round(554 * sRatio), height: Math.round(214 * sRatio), borderRadius: Math.round(15 * sRatio) });
     $(".time_box_frame").css({ width: Math.round(604 * sRatio), height: Math.round(350 * sRatio), borderRadius: Math.round(15 * sRatio) });
-    $('.whitebox').css({ width: Math.round(20 * sRatio), height: Math.round(214 * sRatio), borderRadius: Math.round(15 * sRatio) });
+    $('.whitebox').css({ width: Math.round(20 * sRatio), height: Math.round(214 * sRatio), borderRadius:`0 ${Math.round(15 * sRatio)}px ${Math.round(15 * sRatio)}px 0 `});
     $('.timeboxsize').css({ width: Math.round(150 * sRatio), height: Math.round(169 * sRatio), borderRadius: Math.round(15 * sRatio), fontSize: Math.round(123 * sRatio), paddingLeft: Math.round(10 * sRatio) });
     $('.addL').css({ width: Math.round(60 * sRatio), height: Math.round(29 * sRatio), borderRadius: `${Math.round(15 * sRatio)}px 0 0 0`, fontSize: Math.round(30 * sRatio), paddingLeft: Math.round(10 * sRatio), lineHeight: `${Math.round(22 * sRatio)}px` });
     $('.addR').css({ width: Math.round(48 * sRatio), height: Math.round(29 * sRatio), borderRadius: `0 ${Math.round(15 * sRatio)}px 0 0`, fontSize: Math.round(30 * sRatio), paddingLeft: `${Math.round(22 * sRatio)}px`, lineHeight: `${Math.round(22 * sRatio)}px` });
