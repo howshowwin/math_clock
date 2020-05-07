@@ -54,7 +54,7 @@ function convertSizeALL(className) {
     $('.reduceR').css({ width: Math.round(44 * sRatio), height: Math.round(29 * sRatio), borderRadius: `0 0 ${Math.round(15 * sRatio)}px 0`, fontSize: Math.round(30 * sRatio), paddingLeft: `${Math.round(26 * sRatio)}px`, lineHeight: `${Math.round(22 * sRatio)}px` });
     $('.num_clock_btn,.kiseki_btn').css({ width: Math.round(348 * sRatio), height: Math.round(145 * sRatio) })
     $('.hour_btn,.min_btn,.sec_btn').css({ width: Math.round(166 * sRatio), height: Math.round(166 * sRatio) });
-    $('.backpage_btn,.close_btn').css({ width: Math.round(119 * sRatio), height: Math.round(119 * sRatio) });
+    $('.backpage_btn,.close_btn,.howtouse').css({ width: Math.round(119 * sRatio), height: Math.round(119 * sRatio) });
     $('.clock,.line').css({ width: Math.round(716 * sRatio), height: Math.round(711 * sRatio) });
     $('.sechand').css({ width: Math.round(38 * sRatio), height: Math.round(409 * sRatio) });
     $('.minhand').css({ width: Math.round(44 * sRatio), height: Math.round(263 * sRatio) });
@@ -62,7 +62,12 @@ function convertSizeALL(className) {
     $('.dot').css({ width: Math.round(46 * sRatio), height: Math.round(46 * sRatio) });
     $('.drawareasec,.drawareamin,.drawareahour').css({ width: Math.round(716 * sRatio), height: Math.round(711 * sRatio) });
     $('.shadow').css({ width: Math.round(752 * sRatio), height: Math.round(752 * sRatio) });
+    $('.mask').css({ width: Math.round(w * sRatio), height: Math.round(h * sRatio) });
+    $('.info').css({ width: Math.round(673*1.6  * sRatio), height: Math.round(456 *1.6* sRatio) });
+    $('.info-page').css({ width: Math.round(1039  * sRatio), height: Math.round(687.6* sRatio),borderRadius: Math.round(15 * sRatio) });
+    $('.info-btn-left,.info-btn-right').css({ width: Math.round(35 * sRatio), height: Math.round(35 * sRatio) });
 
+    $('.btn_close_inset').css({ width: Math.round(53 * sRatio), height: Math.round(53 * sRatio) });
     centerX = $('.dot').offset().left + $('.dot').width() / 2
     centerY = $('.dot').offset().top + $('.dot').height() / 2
     a = Math.round(716 * sRSS)

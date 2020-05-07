@@ -16,7 +16,7 @@ $('.num_clock_btn').click(function () {
       $('.sec_box').removeClass('display_none')
 
     }
-  
+
     $('.num_clock_btn').css({
       background: "url(img/bt1-1.png)",
       backgroundSize: 'cover'
@@ -48,9 +48,24 @@ $('.kiseki_btn').click(function () {
 
     $('.kiseki_btn').css({
       background: "url(img/bt2-1.png)",
-      backgroundSize: 'cover'
+      backgroundSize: 'cover',
+
     })
     kisakiopen = 1
+
+    $('.sec_btn').css({
+      background: "url(img/bt5-2.png)",
+      backgroundSize: 'cover',
+      pointerEvents: "none"
+
+
+    })
+    $('.drawareasec svg').addClass('display_none')
+    $('.sechand').addClass('display_none')
+    $('.sec_box').addClass('display_none')
+    $('.whitebox').removeClass('display_none')
+    $(".time_box_frame").css({ width: Math.round(374 * sRSS) })
+    secopen = 0
 
   }
   else if (kisakiopen == 1) {
@@ -58,9 +73,17 @@ $('.kiseki_btn').click(function () {
 
     $('.kiseki_btn').css({
       background: "url(img/bt2.svg)",
-      backgroundSize: 'cover'
+      backgroundSize: 'cover',
     })
     kisakiopen = 0
+
+
+    $('.sec_btn').css({
+      background: "url(img/bt5.png)",
+      backgroundSize: 'cover',
+      pointerEvents: "all"
+    })
+
   }
 })
 
@@ -127,8 +150,8 @@ $('.sec_btn').click(function () {
     secopen = 1
   }
   else if (secopen == 1) {
-    $('.sechand').addClass('display_none')
     $('.drawareasec svg').addClass('display_none')
+    $('.sechand').addClass('display_none')
     $('.sec_box').addClass('display_none')
     $('.whitebox').removeClass('display_none')
     $(".time_box_frame").css({ width: Math.round(374 * sRSS) })
@@ -177,7 +200,6 @@ $('.ten_add').click(function () {
 $('.one_add').click(function () {
   if ($(this).closest('.timeboxsize').data("hour")) {
     houraddreducenow = 1
-    console.log("thit")
   }
   if ($(this).closest('.timeboxsize').data("min")) {
     minaddreducenow = 1
@@ -231,7 +253,6 @@ function addtime(thisadd, num) {
   let input = thisadd.closest('.timeboxsize').data("value")
   input = parseInt(input)
   input = input + num
-  console.log(input)
   if (input > 12 && houraddreducenow == 1) {
     input = input - 12
   }
@@ -322,14 +343,22 @@ function addtime(thisadd, num) {
     input = 60 + input
 
   }
-  if (input < 0 && houraddreducenow == 1) {
+  if (input < 0 && houraddreducenow == 1 ) {
     input = 12 + input
 
     input = "0" + input
 
   }
-  if (input == '00' && houraddreducenow == 1) {
+  if (input == '00' && houraddreducenow == 1 ) {
     input = '12'
+
+  }
+  if (input == '011' && houraddreducenow == 1 ) {
+    input = '11'
+
+  }
+  if (input == '010' && houraddreducenow == 1 ) {
+    input = '10'
 
   }
   houraddreducenow = 0
@@ -366,7 +395,6 @@ function settime() {
 
   var littlehourmove = 0.5 * minvalue
 
-  console.log(hourdeg)
   $('.hourhand').css({
     transform: `rotate(${hourdeg + littlehourmove}deg)`
   })
@@ -411,7 +439,6 @@ function rotate_hour(e) {
 
 
   cc = parseInt(cc)
-  // console.log(cc)
 
 
   let bb = el_min.style.transform.slice(7, 25)
@@ -462,7 +489,9 @@ function rotate_hour(e) {
 
 }
 
-
+var setmin = 0
+var readold = 0
+var circleall = 0
 function rotate_min(e) {
   const x = e.clientX - centerX;
   const y = e.clientY - centerY;
@@ -470,9 +499,12 @@ function rotate_min(e) {
   // Calculate angle based on mouse position
   var a = Math.atan2(y, x) * 180 / Math.PI;
   var k = Math.floor(a) % 6
-  a = Math.floor(a) - k
+  a = Math.floor(a) - k + 180
+  // console.log(last_set,readold,a)
+
+
   // Rotate
-  el_min.style.transform = `rotate(${a + 90}deg)`;
+  el_min.style.transform = `rotate(${a - 90}deg)`;
 
 
 
@@ -482,27 +514,39 @@ function rotate_min(e) {
 
 
 
-
   bb = parseInt(bb)
   if (bb < 0) {
-    bb = 360 + bb
-    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
-
+    bb = bb + 360
   }
+
   if (bb != orimin) {
     $('.drawareamin svg').empty()
   }
 
-  if (orimin >= bb) {
-    let bb1 = bb + 360
-    el_hour.style.transform = `rotate(${m_cc + (bb1) / 12}deg)`;
-
-    drawpathmin(orimin, bb1)
-  } else {
-    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
-
-    drawpathmin(orimin, bb)
+  if (orimin > bb) {
+    console.log(orimin)
+    bb = bb + 360
   }
+  if (last_set == a && readold != a && (a - readold) > 0) {
+    m_cc = m_cc + 30
+    drawpathmin(0, 360)
+    circleall = 1
+  }
+  // if (last_set == a && readold != a && (a - readold) < 0) {
+  //   m_cc = m_cc - 30
+
+  //   console.log(m_cc)
+  // }
+  el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
+  if (circleall == 1) {
+    drawpathmin(0, 360)
+
+  } else {
+    drawpathmin(orimin, bb)
+
+  }
+
+  
 
 
 
@@ -519,14 +563,13 @@ function rotate_min(e) {
   if (cc != orihour) {
     $('.drawareahour svg').empty()
   }
-  console.log(cc, orihour)
   if (orihour >= cc) {
     // let cc1 = cc + 360
     drawpathhour(orihour, cc)
   } else {
     drawpathhour(orihour, cc)
   }
-
+  readold = a
 }
 
 
@@ -545,7 +588,6 @@ function rotate_second(e) {
   // Rotate
   var k = Math.floor(a) % 6
   a = Math.floor(a) - k
-  console.log(a)
   el_sec.style.transform = `rotate(${a + 90}deg)`;
   let now = Math.floor(a) + 90
   let aa = el_sec.style.transform.slice(7, 25)
@@ -588,7 +630,6 @@ function settimegogo() {
   aa = parseInt(aa)
   bb = parseInt(bb)
   cc = parseInt(cc)
-  console.log(aa, bb, cc)
 
   if (aa < 0) {
     aa = 360 + aa
@@ -611,6 +652,7 @@ function settimegogo() {
   if (bb != orimin) {
     $('.drawareamin svg').empty()
   }
+
   if (orimin > bb) {
     let bb1 = bb + 360
     drawpathmin(orimin, bb1)
@@ -634,21 +676,33 @@ function settimegogo() {
   }
 }
 var m_cc
-
 var h_cc
 
-
-$(".minhand").mousedown(function () {
+var last_set = ''
+$(".minhand").mousedown(function (e) {
   m_cc = $(".hour_box").data("value")
   if (m_cc == 12) {
     m_cc = 0
   }
-  console.log(m_cc)
   m_cc = 30 * m_cc
   if (m_cc == '') {
     m_cc = 0
   }
   m_cc = parseInt(m_cc)
+
+
+
+  const x = e.clientX - centerX;
+  const y = e.clientY - centerY;
+
+  // Calculate angle based on mouse position
+  var a = Math.atan2(y, x) * 180 / Math.PI;
+  var k = Math.floor(a) % 6
+  a = Math.floor(a) - k + 180
+
+  last_set = a
+  readold = a
+  circleall = 0
   document.addEventListener('mousemove', rotate_min);
 
 })
@@ -660,7 +714,6 @@ $(".hourhand").mousedown(function () {
     h_cc = 0
   }
   h_cc = parseInt(h_cc)
-  console.log(h_cc)
 
   document.addEventListener('mousemove', rotate_hour);
 
@@ -721,6 +774,7 @@ $('html').mouseup(function () {
   let cc = el_hour.style.transform.slice(7, 25)
   if (cc) {
     cc = parseInt(cc)
+    cc = cc%360
     if (cc < 0) {
       cc = 360 + cc
     }
@@ -728,7 +782,6 @@ $('html').mouseup(function () {
     if (cc > 360) {
       cc = cc - 360
     }
-    console.log(cc)
     cc = Math.floor(cc / 30)
     if (cc == 0) {
       cc = 12
@@ -744,14 +797,12 @@ $('html').mouseup(function () {
 
 
 
-
 // mobtargetTouches[""0""].clientX
 function rotate_hour_moblie(e) {
 
   let minvalue = $(".min_box").data("value")
 
   minvalue = parseInt(minvalue)
-  console.log(e)
 
   var x = e.touches[0].clientX - centerX;
   var y = e.touches[0].clientY - centerY;
@@ -773,7 +824,6 @@ function rotate_hour_moblie(e) {
 
 
   cc = parseInt(cc)
-  // console.log(cc)
 
 
   let bb = el_min.style.transform.slice(7, 25)
@@ -814,6 +864,12 @@ function rotate_hour_moblie(e) {
 
 
 }
+
+var readold_M = 0
+var circleall_M = 0
+
+
+
 function rotate_min_moblie(e) {
   const x = e.touches[0].clientX - centerX;
   const y = e.touches[0].clientY - centerY;
@@ -821,11 +877,10 @@ function rotate_min_moblie(e) {
   // Calculate angle based on mouse position
   var a = Math.atan2(y, x) * 180 / Math.PI;
   var k = Math.floor(a) % 6
-  a = Math.floor(a) - k
-  console.log(a)
+  a = Math.floor(a) - k+ 180
   // Rotate
 
-  el_min.style.transform = `rotate(${a + 90}deg)`;
+  el_min.style.transform = `rotate(${a - 90}deg)`;
 
 
 
@@ -838,23 +893,36 @@ function rotate_min_moblie(e) {
 
   bb = parseInt(bb)
   if (bb < 0) {
-    bb = 360 + bb
-    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
-
+    bb = bb + 360
   }
+
   if (bb != orimin) {
     $('.drawareamin svg').empty()
   }
 
-  if (orimin >= bb) {
-    let bb1 = bb + 360
-    el_hour.style.transform = `rotate(${m_cc + (bb1) / 12}deg)`;
 
-    drawpathmin(orimin, bb1)
+  if (orimin > bb) {
+    console.log(orimin)
+    bb = bb + 360
+  }
+  console.log(last_set_M,readold_M,a)
+  if (last_set_M == a && readold_M != a && (a - readold_M) > 0) {
+    m_cc = m_cc + 30
+    drawpathmin(0, 360)
+    circleall_M = 1
+  }
+  // if (last_set == a && readold != a && (a - readold) < 0) {
+  //   m_cc = m_cc - 30
+
+  //   console.log(m_cc)
+  // }
+  el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
+  if (circleall_M == 1) {
+    drawpathmin(0, 360)
+
   } else {
-    el_hour.style.transform = `rotate(${m_cc + (bb) / 12}deg)`;
-
     drawpathmin(orimin, bb)
+
   }
 
 
@@ -872,13 +940,13 @@ function rotate_min_moblie(e) {
   if (cc != orihour) {
     $('.drawareahour svg').empty()
   }
-  console.log(cc, orihour)
   if (orihour >= cc) {
     // let cc1 = cc + 360
     drawpathhour(orihour, cc)
   } else {
     drawpathhour(orihour, cc)
   }
+  readold_M = a
 }
 
 
@@ -895,7 +963,6 @@ function rotate_second_moblie(e) {
   // Rotate
   var k = Math.floor(a) % 6
   a = Math.floor(a) - k
-  console.log(a)
   el_sec.style.transform = `rotate(${a + 90}deg)`;
   let now = Math.floor(a) + 90
 
@@ -924,7 +991,7 @@ function rotate_second_moblie(e) {
 
 
 }
-
+var last_set_M = ''
 $('.hourhand').on('touchstart', function () {
   h_cc = $(".min_box").data("value")
 
@@ -933,23 +1000,33 @@ $('.hourhand').on('touchstart', function () {
     h_cc = 0
   }
   h_cc = parseInt(h_cc)
-  console.log(h_cc)
 
   document.addEventListener('touchmove', rotate_hour_moblie);
 
 
 });
-$('.minhand').on('touchstart', function () {
+$('.minhand').on('touchstart', function (e) {
   m_cc = $(".hour_box").data("value")
   if (m_cc == 12) {
     m_cc = 0
   }
-  console.log(m_cc)
   m_cc = 30 * m_cc
   if (m_cc == '') {
     m_cc = 0
   }
   m_cc = parseInt(m_cc)
+  
+
+  const x = e.touches[0].clientX - centerX;
+  const y = e.touches[0].clientY - centerY;
+
+  // Calculate angle based on mouse position
+  var a = Math.atan2(y, x) * 180 / Math.PI;
+  var k = Math.floor(a) % 6
+  a = Math.floor(a) - k + 180
+  last_set_M = a
+  readold_M = a
+  circleall_M = 0
   document.addEventListener('touchmove', rotate_min_moblie);
 
 
@@ -1118,9 +1195,62 @@ function drawpathhour(start, end) {
 
 
 
+$('.howtouse').click(function () {
+  $('.mask').removeClass("display_none")
+  $('.info-page').css({
+    background: `url(setpic/${set_pic_info[picnowdisplay]})`,
+    backgroundSize: "cover"
+  })
 
 
+})
 
 
+$('.btn_close_inset').click(function () {
+  $('.mask').addClass("display_none")
+
+})
+
+
+$('.info-page').css({
+  background: `url(setpic/${set_pic_info[0]})`,
+  backgroundSize: "cover"
+})
+console.log(set_pic_info.length)
+// if (set_pic_info.length == 1) {
+//   $('.info-btn-right').addClass('display_none')
+// }
+if (set_pic_info.length > 1) {
+  $('.info-btn-right').removeClass('display_none')
+}
+var picnowdisplay = 0
+var picenddisplay = set_pic_info.length - 1
+$('.info-btn-right').click(function () {
+  picnowdisplay++
+  $('.info-page').css({
+    background: `url(setpic/${set_pic_info[picnowdisplay]})`,
+    backgroundSize: "cover"
+  })
+  if (picnowdisplay == picenddisplay) {
+    $('.info-btn-right').addClass('display_none')
+  }
+  if (picnowdisplay != 0) {
+    $('.info-btn-left').removeClass('display_none')
+  }
+})
+$('.info-btn-left').click(function () {
+  picnowdisplay--
+  $('.info-page').css({
+    background: `url(setpic/${set_pic_info[picnowdisplay]})`,
+    backgroundSize: "cover"
+  })
+  if (picnowdisplay == 0) {
+    $('.info-btn-left').addClass('display_none')
+  }
+  if (picnowdisplay != picenddisplay) {
+    $('.info-btn-right').removeClass('display_none')
+  }
+
+})
 
 

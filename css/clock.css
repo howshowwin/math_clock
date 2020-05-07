@@ -50,7 +50,7 @@ body {
 }
 .whitebox{
     position: absolute;
-    top: 40.8%;
+    top: 40.9%;
     left: 22%;
     z-index: 99;
     background: #F6F7FB;
@@ -190,7 +190,14 @@ svg {
     cursor: pointer;
     left: 85.4%
 }
-
+.howtouse{
+    background: url(../img/btQ.png);
+    background-size: cover;
+    position: absolute;
+    cursor: pointer;
+    top: 70.2%;
+    left: 92.8%
+}
 .close_btn {
     background: url(../img/btX.png);
     background-size: cover;
@@ -281,4 +288,49 @@ svg {
     top: 6.5%;
     left: 37.1%;
     pointer-events: none;
+}
+.mask{
+    position: absolute;
+    top: 0%;
+    background: rgba(102, 102, 102, 0.541);
+    z-index: 99;
+    left: 0%;
+}
+
+.info{
+    background: url(../img/newwindow.svg);
+    background-size: cover;
+    position: absolute;
+    top: 10%;
+    left: 21%;
+}
+.btn_close_inset{
+    background: url(../img/wX.png);
+    background-size: cover;
+    position: absolute;
+    top: 6.5%;
+    left: 91%;
+    cursor: pointer;
+}
+.info-page{
+    background: url(../setpic/page1.svg);
+    background-size: cover;
+    position: absolute;
+    top:2.85%;
+    left: 1.79%;
+}
+.info-btn-left{
+    background: url(../img/wL.png);
+    background-size: cover;
+    position: absolute;
+    top:48%;
+    left: 3.5%;
+
+}
+.info-btn-right{
+    background: url(../img/wR.png);
+    background-size: cover;
+    position: absolute;
+    top:48%;
+    left: 93%;
 }
